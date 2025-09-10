@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGlow Portfolio - Deployment Guide</title>
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --accent: #00c896;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--accent), #121212);
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            padding: 0.5rem 1.5rem;
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 25px;
+            border: 1px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .nav-item:hover {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .code-block {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
+
+        .code-block code {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .step {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .step-number {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+
+        .warning {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .info {
+            background-color: rgba(0, 200, 150, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .platform-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .platform-logo {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00a078;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-menu {
+                gap: 1rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 GreenGlow Portfolio Deployment Guide</h1>
+            <p>Complete guide to deploy your portfolio on Netlify and Vercel</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#overview" class="nav-item">📋 Overview</a>
+            <a href="#preparation" class="nav-item">🛠️ Preparation</a>
+            <a href="#netlify" class="nav-item">🟢 Netlify</a>
+            <a href="#vercel" class="nav-item">⚡ Vercel</a>
+            <a href="#custom-domain" class="nav-item">🌐 Custom Domain</a>
+            <a href="#troubleshooting" class="nav-item">🔧 Troubleshooting</a>
+        </nav>
+
+        <!-- Overview Section -->
+        <section class="section" id="overview">
+            <h2>📋 Overview</h2>
+            <p>This guide covers deployment of your GreenGlow Portfolio template on two popular platforms:</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;">
+                <div class="platform-card">
+                    <div class="platform-logo">🟢</div>
+                    <h3>Netlify</h3>
+                    <ul>
+                        <li>✅ Free hosting with SSL</li>
+                        <li>✅ Continuous deployment from Git</li>
+                        <li>✅ Form handling included</li>
+                        <li>✅ Easy custom domain setup</li>
+                        <li>✅ Drag & drop deployment</li>
+                    </ul>
+                </div>
+                
+                <div class="platform-card">
+                    <div class="platform-logo">⚡</div>
+                    <h3>Vercel</h3>
+                    <ul>
+                        <li>✅ Fast global CDN</li>
+                        <li>✅ Automatic HTTPS</li>
+                        <li>✅ Git integration</li>
+                        <li>✅ Preview deployments</li>
+                        <li>✅ Performance analytics</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preparation Section -->
+        <section class="section" id="preparation">
+            <h2>🛠️ Preparation</h2>
+            
+            <h3>Before You Start</h3>
+            <div class="info">
+                <p><strong>📁 What you need:</strong> Your portfolio files (index.html, style.css, script.js, images folder)</p>
+            </div>
+            
+            <h4>1. Customize Your Portfolio</h4>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Update Personal Information:</strong>
+                <ul>
+                    <li>Replace "Marcus Thompson" with your name throughout index.html</li>
+                    <li>Update email, phone, and location in contact section</li>
+                    <li>Replace profile.jpg with your photo</li>
+                    <li>Update social media links</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Customize Content:</strong>
+                <ul>
+                    <li>Update skills, experience, and education sections</li>
+                    <li>Replace project images and descriptions</li>
+                    <li>Modify services and pricing as needed</li>
+                    <li>Update meta tags for SEO</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Test Locally:</strong>
+                <div class="code-block">
+                    <code># Open index.html in your browser to test<br># Or use a local server:<br>python -m http.server 8000<br># Then visit: http://localhost:8000</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Netlify Section -->
+        <section class="section" id="netlify">
+            <h2>🟢 Netlify Deployment</h2>
+            
+            <h3>Method 1: Deploy Without Git (Drag & Drop)</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Create a ZIP file:</strong>
+                <ul>
+                    <li>Select all your portfolio files (index.html, style.css, script.js, images folder)</li>
+                    <li>Create a ZIP archive (don't zip the parent folder, zip the contents)</li>
+                    <li>Make sure index.html is in the root of the ZIP</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Deploy to Netlify:</strong>
+                <ul>
+                    <li>Go to <a href="https://netlify.com" target="_blank" class="btn">netlify.com</a></li>
+                    <li>Click "Deploy to Netlify for free"</li>
+                    <li>Drag and drop your ZIP file to the deploy area</li>
+                    <li>Wait for deployment (usually 1-2 minutes)</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Get your live URL:</strong>
+                <ul>
+                    <li>Netlify will generate a random URL like: <code>https://amazing-name-123456.netlify.app</code></li>
+                    <li>You can customize this URL in Site Settings → Change site name</li>
+                </ul>
+            </div>
+
+            <h3>Method 2: Deploy With Git (Continuous Deployment)</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Create GitHub Repository:</strong>
+                <div class="code-block">
+                    <code># Initialize git in your project folder<br>git init<br>git add .<br>git commit -m "Initial portfolio commit"<br><br># Create repository on GitHub and push<br>git remote add origin https://github.com/yourusername/your-portfolio.git<br>git branch -M main<br>git push -u origin main</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Connect to Netlify:</strong>
+                <ul>
+                    <li>Sign up/Login to <a href="https://netlify.com" target="_blank" class="btn">Netlify</a></li>
+                    <li>Click "New site from Git"</li>
+                    <li>Choose GitHub and authorize Netlify</li>
+                    <li>Select your portfolio repository</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Configure Build Settings:</strong>
+                <div class="code-block">
+                    <code>Build command: (leave empty)<br>Publish directory: (leave empty or put "/")<br>Branch: main</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Deploy!</strong>
+                <ul>
+                    <li>Click "Deploy site"</li>
+                    <li>Netlify will build and deploy your site</li>
+                    <li>Future pushes to GitHub will auto-deploy</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <p><strong>🎉 Success!</strong> Your portfolio is now live. Netlify also provides form handling - your contact form will work automatically!</p>
+            </div>
+        </section>
+
+        <!-- Vercel Section -->
+        <section class="section" id="vercel">
+            <h2>⚡ Vercel Deployment</h2>
+            
+            <h3>Method 1: Deploy Without Git</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Install Vercel CLI:</strong>
+                <div class="code-block">
+                    <code># Install Vercel CLI globally<br>npm install -g vercel<br><br># Or use without installing<br>npx vercel</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Deploy from terminal:</strong>
+                <div class="code-block">
+                    <code># Navigate to your portfolio folder<br>cd your-portfolio-folder<br><br># Deploy to Vercel<br>vercel<br><br># Follow the prompts:<br># - Set up and deploy? Yes<br># - Which scope? (your account)<br># - Link to existing project? No<br># - What's your project's name? your-portfolio<br># - In which directory is your code located? ./</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Your site is live!</strong>
+                <ul>
+                    <li>Vercel will provide a live URL</li>
+                    <li>For production deployment, run: <code>vercel --prod</code></li>
+                </ul>
+            </div>
+
+            <h3>Method 2: Deploy With Git</h3>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Push to GitHub:</strong>
+                <div class="code-block">
+                    <code># If you haven't already, create a GitHub repo<br>git init<br>git add .<br>git commit -m "Initial portfolio commit"<br>git remote add origin https://github.com/yourusername/portfolio.git<br>git push -u origin main</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Connect to Vercel:</strong>
+                <ul>
+                    <li>Go to <a href="https://vercel.com" target="_blank" class="btn">vercel.com</a></li>
+                    <li>Sign up with GitHub</li>
+                    <li>Click "New Project"</li>
+                    <li>Import your portfolio repository</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Configure and Deploy:</strong>
+                <div class="code-block">
+                    <code>Framework Preset: Other<br>Root Directory: ./<br>Build Command: (leave empty)<br>Output Directory: (leave empty)<br>Install Command: (leave empty)</code>
+                </div>
+                <ul>
+                    <li>Click "Deploy"</li>
+                    <li>Vercel will build and deploy your site</li>
+                    <li>Future commits will trigger automatic deployments</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <p><strong>🚀 Live!</strong> Your portfolio is deployed with Vercel's global CDN for optimal performance worldwide.</p>
+            </div>
+        </section>
+
+        <!-- Custom Domain Section -->
+        <section class="section" id="custom-domain">
+            <h2>🌐 Custom Domain Setup</h2>
+            
+            <h3>For Netlify:</h3>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Add Custom Domain:</strong>
+                <ul>
+                    <li>Go to your site dashboard on Netlify</li>
+                    <li>Click "Domain management"</li>
+                    <li>Click "Add custom domain"</li>
+                    <li>Enter your domain (e.g., yourname.com)</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Configure DNS:</strong>
+                <div class="code-block">
+                    <code># Add these DNS records at your domain provider:<br>Type: A Record<br>Name: @ (or root)<br>Value: 75.2.60.5<br><br>Type: CNAME<br>Name: www<br>Value: your-site-name.netlify.app</code>
+                </div>
+            </div>
+
+            <h3>For Vercel:</h3>
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Add Domain:</strong>
+                <ul>
+                    <li>Go to your project dashboard on Vercel</li>
+                    <li>Click "Domains"</li>
+                    <li>Enter your custom domain</li>
+                    <li>Follow the DNS configuration instructions</li>
+                </ul>
+            </div>
+
+            <div class="warning">
+                <p><strong>⚠️ Important:</strong> DNS changes can take 24-48 hours to propagate globally. SSL certificates are automatically generated once DNS is configured.</p>
+            </div>
+        </section>
+
+        <!-- Troubleshooting Section -->
+        <section class="section" id="troubleshooting">
+            <h2>🔧 Troubleshooting</h2>
+            
+            <h3>Common Issues and Solutions:</h3>
+            
+            <h4>🔍 Site Not Loading</h4>
+            <ul>
+                <li>Make sure <code>index.html</code> is in the root directory</li>
+                <li>Check that all file paths are correct (case-sensitive)</li>
+                <li>Verify images folder is included in deployment</li>
+            </ul>
+
+            <h4>🖼️ Images Not Showing</h4>
+            <ul>
+                <li>Check image paths in HTML (should be relative: <code>images/profile.jpg</code>)</li>
+                <li>Ensure images folder is uploaded</li>
+                <li>Verify image file names match exactly (case-sensitive)</li>
+            </ul>
+
+            <h4>📱 Contact Form Not Working</h4>
+            <ul>
+                <li><strong>Netlify:</strong> Forms work automatically, add <code>netlify</code> attribute to form tag</li>
+                <li><strong>Vercel:</strong> Requires serverless function or external service (like Formspree)</li>
+            </ul>
+
+            <h4>🌐 Custom Domain Issues</h4>
+            <ul>
+                <li>DNS changes take time (24-48 hours)</li>
+                <li>Use DNS checker tools to verify propagation</li>
+                <li>Ensure DNS records are configured correctly</li>
+            </ul>
+
+            <h4>🚀 Performance Optimization</h4>
+            <ul>
+                <li>Compress images before uploading</li>
+                <li>Minify CSS and JavaScript files</li>
+                <li>Enable Brotli compression (automatic in both platforms)</li>
+            </ul>
+
+            <div class="info">
+                <p><strong>💡 Need Help?</strong> Both Netlify and Vercel have excellent documentation and community forums. Don't hesitate to check their support resources!</p>
+            </div>
+
+            <h3>Useful Links:</h3>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                <a href="https://docs.netlify.com/" target="_blank" class="btn">Netlify Docs</a>
+                <a href="https://vercel.com/docs" target="_blank" class="btn">Vercel Docs</a>
+                <a href="https://developers.google.com/speed/pagespeed/insights/" target="_blank" class="btn">PageSpeed Test</a>
+                <a href="https://www.whatsmydns.net/" target="_blank" class="btn">DNS Checker</a>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; background-color: var(--bg-secondary); border-radius: 10px;">
+            <h3>🎉 Congratulations!</h3>
+            <p>Your GreenGlow Portfolio is now live and ready to showcase your skills to the world!</p>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Remember to keep your portfolio updated with your latest projects and achievements.</p>
+        </div>
+    </div>
+
+    <script>
+        // Copy to clipboard functionality
+        document.querySelectorAll('.code-block').forEach(block => {
+            const button = document.createElement('button');
+            button.className = 'copy-btn';
+            button.textContent = 'Copy';
+            button.onclick = () => {
+                const code = block.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => button.textContent = 'Copy', 2000);
+                });
+            };
+            block.appendChild(button);
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

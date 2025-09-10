@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGlow Portfolio - Customization Guide</title>  
+    <style>
+        :root {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #121212;
+            --accent: #00c896;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem 0;
+            background: linear-gradient(135deg, var(--accent), #121212);
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-item {
+            padding: 0.5rem 1rem;
+            background-color: var(--bg-secondary);
+            color: var(--accent);
+            text-decoration: none;
+            border-radius: 20px;
+            border: 1px solid var(--accent);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .nav-item:hover {
+            background-color: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        .section {
+            margin-bottom: 3rem;
+            background-color: var(--bg-secondary);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .section h2 {
+            color: var(--accent);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section h3 {
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem 0;
+        }
+
+        .section h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .code-block {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+            overflow-x: auto;
+            font-family: 'JetBrains Mono', monospace;
+            position: relative;
+        }
+
+        .code-block code {
+            color: var(--accent);
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 0.5rem;
+            right: 0.5rem;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .step {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: var(--bg-primary);
+            border-radius: 8px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .color-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .color-item {
+            background-color: var(--bg-primary);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .color-swatch {
+            width: 100%;
+            height: 60px;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .info {
+            background-color: rgba(0, 200, 150, 0.1);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .warning {
+            background-color: rgba(239, 68, 68, 0.1);
+            border: 1px solid #ef4444;
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .example-card {
+            background-color: var(--bg-primary);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .checklist li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checklist li::before {
+            content: "✅";
+            font-size: 1.2rem;
+        }
+
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--bg-primary);
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem 0.5rem 0.5rem 0;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #00a078;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 GreenGlow Portfolio Customization Guide</h1>
+            <p>Complete guide to customize your portfolio template</p>
+        </div>
+
+        <nav class="nav-menu">
+            <a href="#getting-started" class="nav-item">🚀 Getting Started</a>
+            <a href="#personal-info" class="nav-item">👤 Personal Info</a>
+            <a href="#colors-themes" class="nav-item">🎨 Colors & Themes</a>
+            <a href="#content-sections" class="nav-item">📝 Content</a>
+            <a href="#images" class="nav-item">🖼️ Images</a>
+            <a href="#seo-meta" class="nav-item">🔍 SEO & Meta</a>
+            <a href="#advanced" class="nav-item">⚙️ Advanced</a>
+        </nav>
+
+        <!-- Getting Started -->
+        <section class="section" id="getting-started">
+            <h2>🚀 Getting Started</h2>
+            
+            <h3>Prerequisites</h3>
+            <ul class="checklist">
+                <li>Text editor (VS Code, Sublime Text, etc.)</li>
+                <li>Web browser for testing</li>
+                <li>Basic HTML/CSS knowledge (helpful but not required)</li>
+                <li>Your content ready (bio, projects, photos)</li>
+            </ul>
+
+            <h3>File Structure Overview</h3>
+            <div class="code-block">
+                <code>GreenGlow-Fresher-Portfolio/<br>├── index.html          # Main content and structure<br>├── style.css           # All styling and colors<br>├── script.js           # Interactive features<br>├── images/             # Your photos and assets<br>└── Doc/               # Documentation files</code>
+            </div>
+
+            <div class="info">
+                <p><strong>💡 Pro Tip:</strong> Always backup your files before making changes. You can duplicate the folder or use version control with Git.</p>
+            </div>
+        </section>
+
+        <!-- Personal Information -->
+        <section class="section" id="personal-info">
+            <h2>👤 Personal Information</h2>
+
+            <h3>1. Basic Information</h3>
+            <div class="step">
+                <h4>Update Your Name</h4>
+                <p>Replace all instances of "Marcus Thompson" with your name:</p>
+                <div class="code-block">
+                    <code>&lt;!-- In index.html --&gt;<br>&lt;div class="logo"&gt;&lt;/&gt; YOUR NAME&lt;/div&gt;<br>&lt;h1&gt;Software Developer&lt;/h1&gt;<br>&lt;title&gt;YOUR NAME - Software Engineer Portfolio&lt;/title&gt;</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Contact Information</h4>
+                <p>Update your contact details in the contact section:</p>
+                <div class="code-block">
+                    <code>&lt;!-- Email --&gt;<br>&lt;p&gt;your.email@gmail.com&lt;/p&gt;<br><br>&lt;!-- Phone --&gt;<br>&lt;p&gt;+1 (xxx) xxx-xxxx&lt;/p&gt;<br><br>&lt;!-- Location --&gt;<br>&lt;p&gt;Your City, State, Country&lt;/p&gt;</code>
+                </div>
+            </div>
+
+            <h3>2. Social Media Links</h3>
+            <div class="step">
+                <h4>Update Social Links</h4>
+                <p>Find the social links section and update with your profiles:</p>
+                <div class="code-block">
+                    <code>&lt;!-- Social Media Links --&gt;<br>&lt;a href="https://github.com/yourusername"&gt;<br>&lt;a href="https://linkedin.com/in/yourprofile"&gt;<br>&lt;a href="https://twitter.com/yourusername"&gt;</code>
+                </div>
+            </div>
+
+            <h3>3. Professional Title & Description</h3>
+            <div class="step">
+                <h4>Customize Your Professional Identity</h4>
+                <div class="code-block">
+                    <code>&lt;!-- Hero Section --&gt;<br>&lt;h1&gt;Your Professional Title&lt;/h1&gt;<br>&lt;p&gt;Your unique value proposition and what you do.&lt;/p&gt;</code>
+                </div>
+                <p><strong>Examples:</strong></p>
+                <ul>
+                    <li>"Frontend Developer" - Focus on UI/UX</li>
+                    <li>"Full-Stack Engineer" - Both frontend and backend</li>
+                    <li>"Software Developer" - General development</li>
+                    <li>"Web Developer" - Web-focused development</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Colors and Themes -->
+        <section class="section" id="colors-themes">
+            <h2>🎨 Colors & Themes</h2>
+
+            <h3>Current Color Scheme</h3>
+            <div class="color-demo">
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #0a0a0a;"></div>
+                    <strong>Primary Background</strong><br>
+                    <code>#0a0a0a</code>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #121212;"></div>
+                    <strong>Secondary Background</strong><br>
+                    <code>#121212</code>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #00c896;"></div>
+                    <strong>Accent (Green)</strong><br>
+                    <code>#00c896</code>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background-color: #f1f5f9;"></div>
+                    <strong>Primary Text</strong><br>
+                    <code>#f1f5f9</code>
+                </div>
+            </div>
+
+            <h3>Customizing Colors</h3>
+            <div class="step">
+                <h4>Method 1: Change CSS Variables (Recommended)</h4>
+                <p>Edit the `:root` section in `style.css`:</p>
+                <div class="code-block">
+                    <code>:root {<br>    --bg-primary: #your-color;        /* Main background */<br>    --bg-secondary: #your-color;      /* Card backgrounds */<br>    --accent: #your-color;            /* Buttons, links, highlights */<br>    --text-primary: #your-color;      /* Main text */<br>    --text-secondary: #your-color;    /* Secondary text */<br>}</code>
+                </div>
+            </div>
+
+            <h3>Popular Color Schemes</h3>
+            <div class="example-card">
+                <h4>🔵 Blue Professional</h4>
+                <div class="code-block">
+                    <code>--accent: #3b82f6;            /* Blue accent */<br>--bg-primary: #0f172a;        /* Dark blue background */<br>--bg-secondary: #1e293b;      /* Lighter dark blue */</code>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>🟣 Purple Creative</h4>
+                <div class="code-block">
+                    <code>--accent: #8b5cf6;            /* Purple accent */<br>--bg-primary: #0c0a1b;        /* Dark purple background */<br>--bg-secondary: #1a1625;      /* Lighter dark purple */</code>
+                </div>
+            </div>
+
+            <div class="example-card">
+                <h4>🟠 Orange Energetic</h4>
+                <div class="code-block">
+                    <code>--accent: #f97316;            /* Orange accent */<br>--bg-primary: #1a0e0a;        /* Dark orange background */<br>--bg-secondary: #2d1b14;      /* Lighter dark orange */</code>
+                </div>
+            </div>
+
+            <div class="warning">
+                <p><strong>⚠️ Important:</strong> When changing colors, ensure sufficient contrast for accessibility. Test with tools like WebAIM Color Contrast Checker.</p>
+            </div>
+        </section>
+
+        <!-- Content Sections -->
+        <section class="section" id="content-sections">
+            <h2>📝 Content Sections</h2>
+
+            <h3>About Me Section</h3>
+            <div class="step">
+                <h4>Personal Introduction</h4>
+                <div class="code-block">
+                    <code>&lt;p class="about-intro"&gt;Hello! I'm [Your Name], a passionate [Your Role] based in [Your Location].&lt;/p&gt;<br><br>&lt;p class="about-description"&gt;<br>Your unique background, what you specialize in, and what drives you as a developer.<br>&lt;/p&gt;</code>
+                </div>
+            </div>
+
+            <div class="step">
+                <h4>Statistics Update</h4>
+                <div class="code-block">
+                    <code>&lt;div class="stat-item"&gt;<br>    &lt;span class="stat-number"&gt;2+&lt;/span&gt;<br>    &lt;span class="stat-label"&gt;Years Experience&lt;/span&gt;<br>&lt;/div&gt;</code>
+                </div>
+                <p>Update with your actual experience, projects completed, and client count.</p>
+            </div>
+
+            <h3>Experience Section</h3>
+            <div class="step">
+                <h4>Adding/Modifying Work Experience</h4>
+                <p>Each experience follows this structure:</p>
+                <div class="code-block">
+                    <code>&lt;div class="experience-card"&gt;<br>    &lt;div class="experience-header"&gt;<br>        &lt;h3&gt;Your Job Title&lt;/h3&gt;<br>        &lt;h4&gt;Company Name&lt;/h4&gt;<br>        &lt;span class="duration"&gt;Start - End Date&lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;div class="experience-content"&gt;<br>        &lt;p&gt;Job description...&lt;/p&gt;<br>        &lt;ul&gt;<br>            &lt;li&gt;Achievement 1&lt;/li&gt;<br>            &lt;li&gt;Achievement 2&lt;/li&gt;<br>        &lt;/ul&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <h3>Skills Section</h3>
+            <div class="step">
+                <h4>Customizing Skills</h4>
+                <p>Update skills to match your expertise:</p>
+                <div class="code-block">
+                    <code>&lt;div class="skill-card"&gt;<br>    &lt;div class="skill-icon"&gt;<br>        &lt;span&gt;&lt;i class="fab fa-react"&gt;&lt;/i&gt;&lt;/span&gt;<br>    &lt;/div&gt;<br>    &lt;h3&gt;Your Skill&lt;/h3&gt;<br>    &lt;p&gt;Description of your skill level and experience&lt;/p&gt;<br>&lt;/div&gt;</code>
+                </div>
+                <p><strong>Icon Resources:</strong></p>
+                <ul>
+                    <li><a href="https://fontawesome.com/icons" target="_blank" class="btn">Font Awesome Icons</a></li>
+                    <li>Use class names like: <code>fab fa-javascript</code>, <code>fab fa-python</code>, <code>fab fa-react</code></li>
+                </ul>
+            </div>
+
+            <h3>Projects Section</h3>
+            <div class="step">
+                <h4>Adding Your Projects</h4>
+                <p>Replace demo projects with your own:</p>
+                <div class="code-block">
+                    <code>&lt;div class="demo-item"&gt;<br>    &lt;img src="images/Project/your-project.jpg" alt="Project Description"&gt;<br>    &lt;h3&gt;Project Name&lt;/h3&gt;<br>    &lt;p&gt;Project description and technologies used&lt;/p&gt;<br>    &lt;div class="demo-links"&gt;<br>        &lt;a href="https://your-live-demo.com"&gt;View Live&lt;/a&gt;<br>        &lt;a href="https://github.com/you/project"&gt;View Code&lt;/a&gt;<br>    &lt;/div&gt;<br>&lt;/div&gt;</code>
+                </div>
+            </div>
+
+            <h3>Services & Pricing</h3>
+            <div class="step">
+                <h4>Customizing Services</h4>
+                <p>Adjust services based on what you offer:</p>
+                <ul>
+                    <li><strong>Freelancers:</strong> Keep pricing plans</li>
+                    <li><strong>Job Seekers:</strong> Remove pricing, focus on capabilities</li>
+                    <li><strong>Agency Workers:</strong> Modify to showcase team services</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Images -->
+        <section class="section" id="images">
+            <h2>🖼️ Images & Media</h2>
+
+            <h3>Profile Photo</h3>
+            <div class="step">
+                <h4>Replacing Your Profile Image</h4>
+                <p>Replace <code>images/profile.jpg</code> with your professional photo:</p>
+                <ul>
+                    <li><strong>Recommended size:</strong> 400x400px minimum</li>
+                    <li><strong>Format:</strong> JPG or PNG</li>
+                    <li><strong>Style:</strong> Professional headshot with good lighting</li>
+                    <li><strong>Background:</strong> Solid color or subtle pattern</li>
+                </ul>
+            </div>
+
+            <h3>Project Screenshots</h3>
+            <div class="step">
+                <h4>Adding Project Images</h4>
+                <p>Replace files in <code>images/Project/</code> folder:</p>
+                <div class="code-block">
+                    <code>images/Project/<br>├── your-project-1.jpg<br>├── your-project-2.jpg<br>├── your-project-3.jpg<br>└── your-project-4.jpg</code>
+                </div>
+                <p><strong>Image Guidelines:</strong></p>
+                <ul>
+                    <li>Size: 1200x800px (3:2 aspect ratio)</li>
+                    <li>Format: JPG (optimized for web)</li>
+                    <li>Quality: High resolution but compressed (&lt;200KB each)</li>
+                    <li>Content: Clean screenshots showing your work</li>
+                </ul>
+            </div>
+
+            <h3>Favicon</h3>
+            <div class="step">
+                <h4>Custom Favicon</h4>
+                <p>Replace <code>images/favicon.png</code> with your custom icon:</p>
+                <ul>
+                    <li>Size: 32x32px or 16x16px</li>
+                    <li>Format: PNG or ICO</li>
+                    <li>Design: Simple, recognizable symbol or initials</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <p><strong>💡 Image Optimization Tools:</strong></p>
+                <ul>
+                    <li><a href="https://tinypng.com/" target="_blank" class="btn">TinyPNG</a> - Compress images</li>
+                    <li><a href="https://www.canva.com/" target="_blank" class="btn">Canva</a> - Create graphics</li>
+                    <li><a href="https://favicon.io/" target="_blank" class="btn">Favicon.io</a> - Generate favicons</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SEO & Meta -->
+        <section class="section" id="seo-meta">
+            <h2>🔍 SEO & Meta Tags</h2>
+
+            <h3>Page Title & Description</h3>
+            <div class="step">
+                <h4>Update Meta Information</h4>
+                <div class="code-block">
+                    <code>&lt;title&gt;Your Name - Your Professional Title&lt;/title&gt;<br><br>&lt;meta name="description" content="Your Name - Brief description of what you do and your specialties. Based in Your Location."&gt;<br><br>&lt;meta name="keywords" content="your skills, technologies, location, industry keywords"&gt;</code>
+                </div>
+            </div>
+
+            <h3>Social Media Meta Tags</h3>
+            <div class="step">
+                <h4>Open Graph & Twitter Cards</h4>
+                <div class="code-block">
+                    <code>&lt;!-- Open Graph / Facebook --&gt;<br>&lt;meta property="og:title" content="Your Name - Portfolio"&gt;<br>&lt;meta property="og:description" content="Your description"&gt;<br>&lt;meta property="og:url" content="https://yourwebsite.com"&gt;<br><br>&lt;!-- Twitter --&gt;<br>&lt;meta property="twitter:title" content="Your Name - Portfolio"&gt;<br>&lt;meta property="twitter:description" content="Your description"&gt;</code>
+                </div>
+            </div>
+
+            <h3>Structured Data</h3>
+            <div class="step">
+                <h4>JSON-LD Schema</h4>
+                <p>Update the structured data for better SEO:</p>
+                <div class="code-block">
+                    <code>{<br>  "@context": "https://schema.org",<br>  "@type": "Person",<br>  "name": "Your Name",<br>  "jobTitle": "Your Job Title",<br>  "url": "https://yourwebsite.com",<br>  "email": "your@email.com",<br>  "address": {<br>    "@type": "PostalAddress",<br>    "addressLocality": "Your City",<br>    "addressRegion": "Your State",<br>    "addressCountry": "Your Country"<br>  }<br>}</code>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advanced Customization -->
+        <section class="section" id="advanced">
+            <h2>⚙️ Advanced Customization</h2>
+
+            <h3>Adding New Sections</h3>
+            <div class="step">
+                <h4>Blog Section Example</h4>
+                <div class="code-block">
+                    <code>&lt;section class="section" id="blog"&gt;<br>    &lt;div class="container"&gt;<br>        &lt;div class="section-title"&gt;<br>            &lt;h2&gt;Latest Blog Posts&lt;/h2&gt;<br>        &lt;/div&gt;<br>        &lt;!-- Your blog content here --&gt;<br>    &lt;/div&gt;<br>&lt;/section&gt;</code>
+                </div>
+            </div>
+
+            <h3>Typography Customization</h3>
+            <div class="step">
+                <h4>Changing Fonts</h4>
+                <p>To use different fonts, update the Google Fonts import and CSS variables:</p>
+                <div class="code-block">
+                    <code>&lt;!-- In HTML head --&gt;<br>&lt;link href="https://fonts.googleapis.com/css2?family=YourFont:wght@300;400;600&display=swap" rel="stylesheet"&gt;<br><br>/* In CSS */<br>:root {<br>    --font-primary: 'YourFont', sans-serif;<br>    --font-heading: 'YourFont', sans-serif;<br>}</code>
+                </div>
+            </div>
+
+            <h3>Animation Adjustments</h3>
+            <div class="step">
+                <h4>Modifying Animations</h4>
+                <p>Find animation properties in CSS and adjust:</p>
+                <div class="code-block">
+                    <code>/* Reduce animation duration */<br>.element {<br>    transition: all 0.2s ease; /* was 0.3s */<br>}<br><br>/* Disable animations */<br>* {<br>    animation-duration: 0s !important;<br>    transition-duration: 0s !important;<br>}</code>
+                </div>
+            </div>
+
+            <h3>Performance Optimization</h3>
+            <div class="step">
+                <h4>Quick Performance Tips</h4>
+                <ul>
+                    <li>Compress all images before uploading</li>
+                    <li>Minify CSS and JavaScript files</li>
+                    <li>Use WebP format for images when possible</li>
+                    <li>Remove unused CSS and JavaScript</li>
+                    <li>Enable Gzip compression on your hosting platform</li>
+                </ul>
+            </div>
+
+            <div class="info">
+                <p><strong>🚀 Testing Tools:</strong></p>
+                <ul>
+                    <li><a href="https://pagespeed.web.dev/" target="_blank" class="btn">PageSpeed Insights</a></li>
+                    <li><a href="https://gtmetrix.com/" target="_blank" class="btn">GTmetrix</a></li>
+                    <li><a href="https://validator.w3.org/" target="_blank" class="btn">HTML Validator</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin: 3rem 0; padding: 2rem; background-color: var(--bg-secondary); border-radius: 10px;">
+            <h3>🎉 You're All Set!</h3>
+            <p>Your customized GreenGlow Portfolio is ready to make a great impression!</p>
+            <p style="margin-top: 1rem; color: var(--text-secondary);">Don't forget to test your portfolio on different devices and browsers before deploying.</p>
+            
+            <div style="margin-top: 2rem;">
+                <a href="../index.html" class="btn">👀 Preview Your Portfolio</a>
+                <a href="deployment-guide.html" class="btn">🚀 Deploy Your Portfolio</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Copy functionality for code blocks
+        document.querySelectorAll('.code-block').forEach(block => {
+            const button = document.createElement('button');
+            button.className = 'copy-btn';
+            button.textContent = 'Copy';
+            button.onclick = () => {
+                const code = block.querySelector('code').textContent;
+                navigator.clipboard.writeText(code).then(() => {
+                    button.textContent = 'Copied!';
+                    setTimeout(() => button.textContent = 'Copy', 2000);
+                });
+            };
+            block.appendChild(button);
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+            });
+        });
+    </script>
+</body>
+</html> 

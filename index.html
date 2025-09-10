@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========================================
+         META TAGS & SEO CONFIGURATION
+    ======================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marcus Thompson - Senior Software Engineer specializing in full-stack development, React, Node.js, and modern web technologies. Based in San Francisco, CA.">
+    <meta name="keywords" content="software engineer, full-stack developer, React, Node.js, JavaScript, Python, web development, San Francisco">
+    <meta name="author" content="Marcus Thompson">
+    
+    <!-- ========================================
+         FONT PRELOADING & OPTIMIZATION
+    ======================================== -->
+    <!-- Preconnect to Google Fonts for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts - Modern typography stack -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- ========================================
+         SOCIAL MEDIA META TAGS
+    ======================================== -->
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://marcusthompson.dev">
+    <meta property="og:title" content="Marcus Thompson - Software Engineer Portfolio">
+    <meta property="og:description" content="Senior Software Engineer specializing in full-stack development, React, Node.js, and modern web technologies. Based in San Francisco, CA.">
+    <meta property="og:image" content="https://marcusthompson.dev/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://marcusthompson.dev">
+    <meta property="twitter:title" content="Marcus Thompson - Software Engineer Portfolio">
+    <meta property="twitter:description" content="Senior Software Engineer specializing in full-stack development, React, Node.js, and modern web technologies.">
+    <meta property="twitter:image" content="https://marcusthompson.dev/images/og-image.jpg">
+    
+    <!-- ========================================
+         EXTERNAL RESOURCES & STYLESHEETS
+    ======================================== -->
+    <link rel="canonical" href="https://marcusthompson.dev">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Marcus Thompson - Software Engineer Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- ========================================
+         STRUCTURED DATA FOR SEO
+    ======================================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Marcus Thompson",
+      "jobTitle": "Senior Software Engineer",
+      "url": "https://marcusthompson.dev",
+      "sameAs": [
+        "https://github.com/marcus-thompson-dev",
+        "https://www.linkedin.com/in/marcus-thompson-dev/",
+        "https://twitter.com/marcus_codes"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Francisco",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      },
+      "email": "marcus.thompson.dev@gmail.com",
+      "telephone": "+1-415-555-0123"
+    }
+    </script>
+</head>
+<body>    
+    <!-- ========================================
+         HEADER SECTION WITH NAVIGATION & HERO
+    ======================================== -->
+    <header>
+        <div class="container">
+            <!-- ========================================
+                 NAVIGATION BAR
+            ======================================== -->
+            <nav role="navigation" aria-label="Main navigation">
+                <div class="logo">&lt;/&gt; Marcus Thompson</div>
+                <div class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="nav-links" id="nav-links" role="menubar">
+                    <a href="#home" role="menuitem">Home</a>
+                    <a href="#about" role="menuitem">About</a>
+                    <a href="#experience" role="menuitem">Experience</a>
+                    <a href="#skills" role="menuitem">Skills</a>
+                    <a href="#projects" role="menuitem">Portfolio</a>
+                    <a href="#services" role="menuitem">Services</a>
+                    <a href="#education" role="menuitem">Education</a>
+                    <a href="#contact" role="menuitem">Contact</a>
+                </div>
+            </nav>
+            
+            <!-- ========================================
+                 HERO SECTION - MAIN LANDING AREA
+            ======================================== -->
+            <div class="hero" id="home">                
+                <div class="hero-content">
+                    <h1>Software Developer</h1>
+                    <p>I build exceptional digital experiences with clean, efficient, and maintainable code.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn btn-primary" aria-label="View my work portfolio">View My Work</a>
+                        <a href="#contact" class="btn btn-outline" aria-label="Contact Marcus Thompson">Get In Touch</a>
+                    </div>
+                    
+                    <!-- Terminal Animation Component -->
+                    <div class="terminal">
+                        <div class="terminal-header">
+                            <div class="terminal-btn terminal-close"></div>
+                            <div class="terminal-btn terminal-minimize"></div>
+                            <div class="terminal-btn terminal-expand"></div>
+                        </div>
+                        <div class="terminal-content">
+                            <span class="terminal-prompt">$ </span>npm start<br>
+                            <span class="terminal-prompt">></span> portfolio@1.0.0 start<br>
+                            <span class="terminal-prompt">></span> Starting development server...<br>
+                            <span class="terminal-prompt">></span> Server running at http://localhost:3000<br>
+                            <span class="terminal-prompt">$ </span><span class="terminal-cursor"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Background Code Animation -->
+                <div class="code-bg">
+                    const Developer = {<br>
+                    &nbsp;&nbsp;name: "Marcus Thompson",<br>
+                    &nbsp;&nbsp;skills: ["JavaScript", "React", "Node.js", "Python"],<br>
+                    &nbsp;&nbsp;passion: "Building elegant solutions",<br>
+                    &nbsp;&nbsp;learning: function() {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;return "Always learning new technologies";<br>
+                    &nbsp;&nbsp;}<br>
+                    };<br><br>
+                    
+                    function createProject(name, tech) {<br>
+                    &nbsp;&nbsp;return {<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;name,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;tech,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;start: () => console.log(`Starting ${name}...`),<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;deploy: () => console.log(`${name} deployed!`)<br>
+                    &nbsp;&nbsp;};<br>
+                    }<br><br>
+                    
+                    const projects = [];<br>
+                    projects.push(createProject("E-commerce", ["React", "Node"]));<br>
+                    projects.push(createProject("AI Assistant", ["Python", "TensorFlow"]));<br>
+                    projects.forEach(project => project.deploy());<br>
+                </div>
+            </div>
+        </header>
+
+    <!-- ========================================
+         MAIN CONTENT AREA
+    ======================================== -->
+    <main id="main-content">
+        <!-- ========================================
+             ABOUT SECTION - PERSONAL INTRODUCTION
+        ======================================== -->
+        <section class="section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="section-title">
+                    <h2 id="about-heading">About Me</h2>
+                </div>
+                <div class="about-container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <p class="about-intro">Hello! I'm Marcus Thompson, a passionate Software Engineer based in San Francisco, California.</p>
+                            <p class="about-description">
+                                I specialize in building exceptional digital experiences that combine beautiful design with efficient functionality. With a strong foundation in both frontend and backend development, I create scalable solutions that solve real-world problems.
+                            </p>
+                            <p class="about-focus">
+                                My focus is on writing clean, efficient, and maintainable code while staying up-to-date with the latest technologies and best practices in software development.
+                            </p>
+                        </div>
+                        
+                        <!-- Statistics Cards -->
+                        <div class="about-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">75+</span>
+                                <span class="stat-label">Projects Completed</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">45+</span>
+                                <span class="stat-label">Happy Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Profile Image -->
+                    <div class="about-image">
+                        <div class="image-container">
+                            <img src="images/profile.jpg" alt="Marcus Thompson - Software Engineer">
+                            <div class="image-decoration"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             EXPERIENCE SECTION - WORK HISTORY
+        ======================================== -->
+        <section class="section" id="experience">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Work Experience</h2>
+                    <p>My professional journey in software development and technology</p>
+                </div>
+                <div class="experience-container">
+                    <div class="experience-grid">
+                        <!-- Senior Software Engineer Position -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="company-logo">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="company-info">
+                                    <h3 class="job-title">Senior Software Engineer</h3>
+                                    <h4 class="company-name">TechFlow Solutions</h4>
+                                    <div class="job-meta">
+                                        <span class="duration">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2022 - Present (3+ years)
+                                        </span>
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            San Francisco, CA
+                                        </span>
+                                        <span class="employment-type">
+                                            <i class="fas fa-briefcase"></i>
+                                            Full-time
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <div class="job-description">
+                                    <p>Leading development of enterprise-level web applications and cloud solutions for Fortune 500 clients, while mentoring junior developers in a fast-paced technology environment.</p>
+                                </div>
+                                <div class="key-achievements">
+                                    <h5>Key Achievements:</h5>
+                                    <ul>
+                                        <li>Led development of enterprise SaaS platform serving 100K+ users using React and Node.js</li>
+                                        <li>Implemented microservices architecture improving system scalability by 60% and reducing latency by 40%</li>
+                                        <li>Mentored 8+ junior developers and established code review best practices</li>
+                                        <li>Reduced deployment time by 75% through advanced CI/CD pipeline optimization with GitHub Actions</li>
+                                        <li>Architected real-time data processing system handling 1M+ events per day</li>
+                                    </ul>
+                                </div>
+                                <div class="technologies-used">
+                                    <h5>Technologies Used:</h5>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">TypeScript</span>
+                                        <span class="tech-tag">AWS</span>
+                                        <span class="tech-tag">Docker</span>
+                                        <span class="tech-tag">Kubernetes</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Full Stack Developer Position -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="company-logo">
+                                    <i class="fas fa-laptop-code"></i>
+                                </div>
+                                <div class="company-info">
+                                    <h3 class="job-title">Full Stack Developer</h3>
+                                    <h4 class="company-name">InnovateTech Corp</h4>
+                                    <div class="job-meta">
+                                        <span class="duration">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2020 - 2022 (2 years)
+                                        </span>
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            New York, NY
+                                        </span>
+                                        <span class="employment-type">
+                                            <i class="fas fa-briefcase"></i>
+                                            Full-time
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <div class="job-description">
+                                    <p>Developed and maintained multiple high-performance web applications and APIs for clients across fintech, healthcare, and e-commerce sectors using modern technologies.</p>
+                                </div>
+                                <div class="key-achievements">
+                                    <h5>Key Achievements:</h5>
+                                    <ul>
+                                        <li>Built and maintained 20+ production applications using MERN stack and Python/Django</li>
+                                        <li>Optimized database queries and API responses, reducing application load time by 65%</li>
+                                        <li>Integrated complex third-party APIs including Stripe, PayPal, and various fintech services</li>
+                                        <li>Implemented comprehensive testing strategies achieving 90%+ code coverage</li>
+                                        <li>Led migration of legacy systems to modern cloud infrastructure</li>
+                                    </ul>
+                                </div>
+                                <div class="technologies-used">
+                                    <h5>Technologies Used:</h5>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">JavaScript</span>
+                                        <span class="tech-tag">Python</span>
+                                        <span class="tech-tag">Django</span>
+                                        <span class="tech-tag">PostgreSQL</span>
+                                        <span class="tech-tag">Redis</span>
+                                        <span class="tech-tag">AWS</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Software Developer Position -->
+                        <div class="experience-card">
+                            <div class="experience-header">
+                                <div class="company-logo">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <div class="company-info">
+                                    <h3 class="job-title">Software Developer</h3>
+                                    <h4 class="company-name">StartupLab Ventures</h4>
+                                    <div class="job-meta">
+                                        <span class="duration">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2019 - 2020 (1.5 years)
+                                        </span>
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Los Angeles, CA
+                                        </span>
+                                        <span class="employment-type">
+                                            <i class="fas fa-briefcase"></i>
+                                            Full-time
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="experience-content">
+                                <div class="job-description">
+                                    <p>Started my professional journey in a dynamic startup environment, rapidly advancing from junior to mid-level developer while working on innovative products and learning cutting-edge technologies.</p>
+                                </div>
+                                <div class="key-achievements">
+                                    <h5>Key Achievements:</h5>
+                                    <ul>
+                                        <li>Developed responsive web applications for 15+ startup clients across various industries</li>
+                                        <li>Contributed to open-source projects and established development workflow standards</li>
+                                        <li>Collaborated closely with design and product teams to deliver pixel-perfect user interfaces</li>
+                                        <li>Built internal tools that improved team productivity by 30%</li>
+                                        <li>Quickly adapted to new technologies and frameworks as project requirements evolved</li>
+                                    </ul>
+                                </div>
+                                <div class="technologies-used">
+                                    <h5>Technologies Used:</h5>
+                                    <div class="tech-tags">
+                                        <span class="tech-tag">HTML5</span>
+                                        <span class="tech-tag">CSS3</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                        <span class="tech-tag">Vue.js</span>
+                                        <span class="tech-tag">Node.js</span>
+                                        <span class="tech-tag">MySQL</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SKILLS SECTION - TECHNICAL EXPERTISE
+        ======================================== -->
+        <section class="section" id="skills">
+            <div class="container">
+                <div class="section-title">
+                    <h2>My Skills</h2>
+                </div>
+                
+                <div class="skills-container">
+                    <!-- Frontend Skills -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fa-brands fa-html5"></i></span>
+                        </div>
+                        <h3 class="skill-title">HTML5</h3>
+                        <p class="skill-desc">Crafting semantic, accessible, and modern web structures with HTML5 best practices.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fa-brands fa-css3-alt"></i></span>
+                        </div>
+                        <h3 class="skill-title">CSS3</h3>
+                        <p class="skill-desc">Creating responsive layouts, animations, and modern designs with CSS3 and Sass/SCSS.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fa-brands fa-bootstrap"></i></span>
+                        </div>
+                        <h3 class="skill-title">Bootstrap</h3>
+                        <p class="skill-desc">Building responsive and mobile-first websites using Bootstrap framework and components.</p>
+                    </div>
+                    
+                    <!-- JavaScript & Frameworks -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fab fa-js"></i></span>
+                        </div>
+                        <h3 class="skill-title">JavaScript</h3>
+                        <p class="skill-desc">Expert in modern JavaScript, ES6+, TypeScript, and various frameworks.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fab fa-react"></i></span>
+                        </div>
+                        <h3 class="skill-title">React & React Native</h3>
+                        <p class="skill-desc">Building responsive and interactive front-end applications with React.</p>
+                    </div>
+                    
+                    <!-- Backend Technologies -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fab fa-python"></i></span>
+                        </div>
+                        <h3 class="skill-title">Python</h3>
+                        <p class="skill-desc">Scripting, data analysis, and backend development using Python.</p>
+                    </div>
+
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fab fa-python"></i></span>
+                        </div>
+                        <h3 class="skill-title">Django & DRF</h3>
+                        <p class="skill-desc">Building robust web applications using Django framework and Django REST framework.</p>
+                    </div>
+
+                    <!-- API & Database Skills -->
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fas fa-network-wired"></i></span>
+                        </div>
+                        <h3 class="skill-title">API Development</h3>
+                        <p class="skill-desc">Designing and implementing RESTful APIs with best practices and documentation.</p>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">
+                            <span><i class="fas fa-database"></i></span>
+                        </div>
+                        <h3 class="skill-title">Databases</h3>
+                        <p class="skill-desc">MongoDB, PostgreSQL, MySQL, and Firebase for data storage solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             PROJECT DEMOS SECTION - PORTFOLIO SHOWCASE
+        ======================================== -->
+        <section class="portfolio-demos" id="projects">
+            <div class="container">
+                <div class="demos-header">
+                    <h2>Portfolio</h2>
+                    <p>Check out some of my recent work. Click on any project to see the live demo.</p>
+                </div>
+                
+                <div class="demos-grid">
+                    <!-- E-commerce Project Demo -->
+                    <div class="demo-item">
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <div class="demo-dots">
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                </div>
+                            </div>
+                            <div class="demo-content">
+                                <img src="/images/Project/Ecommerce.jpg" alt="E-commerce Website Demo" class="demo-img">
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h3 class="demo-title">E-commerce Platform</h3>
+                            <p class="demo-description">A fully responsive e-commerce website with product filtering, cart functionality, and secure checkout.</p>
+                            <div class="demo-links">
+                                <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> View Live</a>
+                                <a href="#" class="demo-link"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Restaurant Website Demo -->
+                    <div class="demo-item">
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <div class="demo-dots">
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                </div>
+                            </div>
+                            <div class="demo-content">
+                                <img src="/images/Project/Restaurant-website.jpg" alt="Restaurant Website Demo" class="demo-img">
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h3 class="demo-title">Restaurant Website</h3>
+                            <p class="demo-description">Modern restaurant website with online ordering system, menu management, and reservation capabilities.</p>
+                            <div class="demo-links">
+                                <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> View Live</a>
+                                <a href="#" class="demo-link"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Real Estate Portal Demo -->
+                    <div class="demo-item">
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <div class="demo-dots">
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                </div>
+                            </div>
+                            <div class="demo-content">
+                                <img src="/images/Project/Real-estate-portal.jpg" alt="Real Estate Website Demo" class="demo-img">
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h3 class="demo-title">Real Estate Portal</h3>
+                            <p class="demo-description">Property listing website with advanced search, interactive maps, and virtual tours functionality.</p>
+                            <div class="demo-links">
+                                <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> View Live</a>
+                                <a href="#" class="demo-link"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- SaaS Dashboard Demo -->
+                    <div class="demo-item">
+                        <div class="demo-container">
+                            <div class="demo-header">
+                                <div class="demo-dots">
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                    <div class="demo-dot"></div>
+                                </div>
+                            </div>
+                            <div class="demo-content">
+                                <img src="/images/Project/Saas-dashboard.jpg" alt="SaaS Dashboard Demo" class="demo-img">
+                            </div>
+                        </div>
+                        <div class="demo-info">
+                            <h3 class="demo-title">SaaS Dashboard</h3>
+                            <p class="demo-description">Comprehensive admin dashboard with data visualization, user management, and subscription tracking.</p>
+                            <div class="demo-links">
+                                <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> View Live</a>
+                                <a href="#" class="demo-link"><i class="fab fa-github"></i> View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="demos-cta">
+                    <a href="#contact" class="cta-button">Interested in a custom project? Let's talk!</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             SERVICES & PRICING SECTION
+        ======================================== -->
+        <section class="services-pricing-section" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Services & Pricing</h2>
+                    <p>Comprehensive solutions tailored to your business needs with transparent pricing options.</p>
+                </div>
+                
+                <!-- Services Overview -->
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="service-title">Web Development</h3>
+                        <p class="service-desc">Custom, responsive websites built with modern frameworks and best practices for optimal performance.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3 class="service-title">Mobile App Development</h3>
+                        <p class="service-desc">Cross-platform mobile applications built with React Native for iOS and Android devices.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="service-title">Backend Development</h3>
+                        <p class="service-desc">Robust API development, database design, and server management with Django and Node.js.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 class="service-title">Database Solutions</h3>
+                        <p class="service-desc">Design and implementation of efficient database structures using SQL and NoSQL technologies.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h3 class="service-title">API Integration</h3>
+                        <p class="service-desc">Seamless integration with third-party APIs and services to extend your application's functionality.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="service-title">Security Audits</h3>
+                        <p class="service-desc">Comprehensive security assessments to identify vulnerabilities and implement robust protection measures.</p>
+                    </div>
+                </div>
+                
+                <!-- Section Divider -->
+                <div class="section-divider">
+                    <div class="divider-line"></div>
+                    <div class="divider-icon"><i class="fas fa-tag"></i></div>
+                    <div class="divider-line"></div>
+                </div>
+                
+                <div class="pricing-title">
+                    <h3>Choose Your Perfect Plan</h3>
+                    <p>All packages can be customized to meet your specific requirements.</p>
+                </div>
+                
+                <!-- Pricing Plans -->
+                <div class="pricing-container">
+                    <!-- Starter Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-name">Starter Package</h3>
+                            <div class="pricing-price">$1,499<span>/project</span></div>
+                            <p class="pricing-description">Perfect for small businesses and entrepreneurs</p>
+                        </div>
+                    
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Professional single-page website</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Reliable hosting setup & SSL</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Contact form integration</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Mobile-responsive design</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>2 weeks technical support</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>2 design revisions included</span>
+                            </li>
+                        </ul>
+                    
+                        <a href="#contact" class="pricing-cta">Book Now</a>
+                    </div>                
+                    
+                    <!-- Business Growth Package (Featured) -->
+                    <div class="pricing-card featured">
+                        <div class="featured-badge">Best Value</div>
+                        <div class="pricing-header">
+                            <h3 class="pricing-name">Business Growth</h3>
+                            <div class="pricing-price">$3,499<span>/project</span></div>
+                            <p class="pricing-description">Ideal for growing businesses seeking enhanced online presence</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>5-page professional website</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Premium hosting & CDN setup</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Advanced SEO optimization</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Custom contact & lead forms</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Mobile-first responsive design</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>1 month priority support</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>3 design revisions + 5 content updates</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="pricing-cta">Book Now</a>
+                    </div>
+                    
+                    <!-- Enterprise Solution Package -->
+                    <div class="pricing-card">
+                        <div class="pricing-header">
+                            <h3 class="pricing-name">Enterprise Solution</h3>
+                            <div class="pricing-price">$7,999<span>/project</span></div>
+                            <p class="pricing-description">Complete solution for established businesses and enterprises</p>
+                        </div>
+                        
+                        <ul class="pricing-features">
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Custom branding & logo design</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>10+ page custom web application</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Enterprise hosting (1 year included)</span>
+                            </li>
+                            <li class="pricing-feature">
+                                <i class="fas fa-check"></i>
+                                <span>Advanced SEO & performance optimization</span>
+                            </li>
+                        </ul>
+                        
+                        <a href="#contact" class="pricing-cta">Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========================================
+             EDUCATION & CERTIFICATIONS SECTION
+        ======================================== -->
+        <section class="section" id="education">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Education & Certifications</h2>
+                    <p>My academic background and professional certifications</p>
+                </div>
+                
+                <!-- Education Subsection -->
+                <div class="education-section">
+                    <h3 class="subsection-title">
+                        <i class="fas fa-graduation-cap"></i>
+                        Education
+                    </h3>
+                    <div class="education-grid">
+                        <!-- University Education -->
+                        <div class="education-card">
+                            <div class="education-header">
+                                <div class="university-logo">
+                                    <i class="fas fa-university"></i>
+                                </div>
+                                <div class="education-info">
+                                    <h4 class="degree-title">Bachelor of Science in Computer Science</h4>
+                                    <h5 class="university-name">University of California, Berkeley</h5>
+                                    <div class="education-meta">
+                                        <span class="duration">
+                                            <i class="fas fa-calendar-alt"></i>
+                                            2015 - 2019
+                                        </span>
+                                        <span class="location">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                            Berkeley, California
+                                        </span>
+                                        <span class="grade">
+                                            <i class="fas fa-medal"></i>
+                                            Magna Cum Laude (GPA: 3.7/4.0)
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="education-content">
+                                <div class="education-description">
+                                    <p>Specialized in Software Engineering, Artificial Intelligence, and Database Systems. Completed comprehensive coursework in algorithms, system design, and modern programming paradigms with hands-on projects in web development and machine learning.</p>
+                                </div>
+                                <div class="relevant-coursework">
+                                    <h6>Relevant Coursework:</h6>
+                                    <div class="course-tags">
+                                        <span class="course-tag">Data Structures & Algorithms</span>
+                                        <span class="course-tag">Software Engineering</span>
+                                        <span class="course-tag">Database Systems</span>
+                                        <span class="course-tag">Computer Networks</span>
+                                        <span class="course-tag">Web Development</span>
+                                        <span class="course-tag">Machine Learning</span>
+                                        <span class="course-tag">System Design</span>
+                                        <span class="course-tag">Operating Systems</span>
+                                    </div>
+                                </div>
+                                <div class="achievements">
+                                    <h6>Academic Achievements:</h6>
+                                    <ul>
+                                        <li>Graduated Magna Cum Laude with 3.7/4.0 GPA (Top 10% of class)</li>
+                                        <li>Led senior capstone project: "Real-time Collaborative Code Editor" using React and WebSocket</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Professional Certifications Subsection -->
+                <div class="certifications-section">
+                    <h3 class="subsection-title">
+                        <i class="fas fa-certificate"></i>
+                        Professional Certifications
+                    </h3>
+                    <div class="certifications-grid">
+                        <!-- AWS Certification -->
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <div class="certification-icon aws">
+                                    <i class="fab fa-aws"></i>
+                                </div>
+                                <div class="certification-badge">
+                                    <span class="verified-badge">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verified
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">AWS Certified Developer - Associate</h4>
+                                <p class="certification-issuer">Amazon Web Services</p>
+                                <div class="certification-meta">
+                                    <span class="issue-date">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Issued: March 2023
+                                    </span>
+                                    <span class="expiry-date">
+                                        <i class="fas fa-clock"></i>
+                                        Expires: March 2026
+                                    </span>
+                                    <span class="credential-id">
+                                        <i class="fas fa-id-card"></i>
+                                        ID: AWS-DEV-2023-001234
+                                    </span>
+                                </div>
+                                <div class="certification-skills">
+                                    <h6>Skills Validated:</h6>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">AWS Lambda</span>
+                                        <span class="skill-tag">DynamoDB</span>
+                                        <span class="skill-tag">API Gateway</span>
+                                        <span class="skill-tag">CloudFormation</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MongoDB Certification -->
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <div class="certification-icon mongodb">
+                                    <i class="fas fa-database"></i>
+                                </div>
+                                <div class="certification-badge">
+                                    <span class="verified-badge">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verified
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">MongoDB Certified Developer</h4>
+                                <p class="certification-issuer">MongoDB University</p>
+                                <div class="certification-meta">
+                                    <span class="issue-date">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Issued: December 2021
+                                    </span>
+                                    <span class="completion-rate">
+                                        <i class="fas fa-trophy"></i>
+                                        95% Completion
+                                    </span>
+                                    <span class="credential-id">
+                                        <i class="fas fa-id-card"></i>
+                                        ID: MDB-DEV-2021-789012
+                                    </span>
+                                </div>
+                                <div class="certification-skills">
+                                    <h6>Skills Validated:</h6>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">NoSQL Design</span>
+                                        <span class="skill-tag">Aggregation</span>
+                                        <span class="skill-tag">Indexing</span>
+                                        <span class="skill-tag">Data Modeling</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Google Cloud Certification -->
+                        <div class="certification-card">
+                            <div class="certification-header">
+                                <div class="certification-icon google">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div class="certification-badge">
+                                    <span class="verified-badge">
+                                        <i class="fas fa-check-circle"></i>
+                                        Verified
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="certification-content">
+                                <h4 class="certification-title">Google Cloud Professional Developer</h4>
+                                <p class="certification-issuer">Google Cloud Platform</p>
+                                <div class="certification-meta">
+                                    <span class="issue-date">
+                                        <i class="fas fa-calendar-check"></i>
+                                        Issued: June 2023
+                                    </span>
+                                    <span class="expiry-date">
+                                        <i class="fas fa-clock"></i>
+                                        Expires: June 2025
+                                    </span>
+                                    <span class="credential-id">
+                                        <i class="fas fa-id-card"></i>
+                                        ID: GCP-DEV-2023-345678
+                                    </span>
+                                </div>
+                                <div class="certification-skills">
+                                    <h6>Skills Validated:</h6>
+                                    <div class="skill-tags">
+                                        <span class="skill-tag">Cloud Functions</span>
+                                        <span class="skill-tag">App Engine</span>
+                                        <span class="skill-tag">Cloud Storage</span>
+                                        <span class="skill-tag">BigQuery</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             CONTACT SECTION - GET IN TOUCH
+        ======================================== -->
+        <section class="section" id="contact">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Get In Touch</h2>
+                </div>
+                
+                <div class="contact-container">
+                    <!-- Contact Information -->
+                    <div class="contact-info">
+                        <div>
+                            <h3>Let's start a project together</h3>
+                            <p>Feel free to reach out if you're looking for a developer, have a question, or just want to connect.</p>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>marcus.thompson.dev@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+1 (415) 555-0123</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>San Francisco, California, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="contact-form">
+                        <form role="form" aria-label="Contact form">
+                            <div class="form-group">
+                                <label for="name" class="form-label">Your Name *</label>
+                                <input type="text" id="name" class="form-input" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email" class="form-label">Your Email *</label>
+                                <input type="email" id="email" class="form-input" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <input type="text" id="subject" class="form-input" required aria-required="true">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Your Message *</label>
+                                <textarea id="message" class="form-input" required aria-required="true" rows="5"></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" aria-label="Send message to Marcus Thompson">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========================================
+             FOOTER SECTION - SITE FOOTER
+        ======================================== -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <!-- Logo & Description -->
+                    <div>
+                        <div class="logo">&lt;/&gt; Marcus Thompson</div>
+                        <p style="color: var(--text-secondary); margin-top: 1rem;">
+                            Creating digital experiences through code.
+                        </p>
+                    </div>
+                    
+                    <!-- Footer Navigation Links -->
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#skills">Skills</a>
+                        <a href="#projects">Projects</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="https://github.com/marcus-thompson-dev" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/marcus-thompson-dev/" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://twitter.com/marcus_codes" class="social-link"><i class="fab fa-twitter"></i></a>
+                    </div>                
+                </div>
+                
+                <!-- Copyright Notice -->
+                <div style="text-align: center; margin-top: 3rem; color: var(--text-secondary);">
+                    &copy; 2025 Marcus Thompson. All rights reserved.
+                </div>
+            </div>
+        </footer>
+        
+        <!-- ========================================
+             JAVASCRIPT RESOURCES
+        ======================================== -->
+        <script src="script.js"></script>
+    </main>
+</body>
+</html>
