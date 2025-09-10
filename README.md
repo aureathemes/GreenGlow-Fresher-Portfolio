@@ -153,6 +153,15 @@ If you need professional customization or development assistance:
 - Additional features development
 - SEO and marketing optimization
 
+## 🔗 Official Website & Templates
+
+- **Main Website**: [AureaThemes](https://aureathemes.com/)
+- **All Templates**: [Templates Directory](https://aureathemes.com/templates/)
+- **Techfolio**: [Techfolio](https://aureathemes.com/templates/techfolio/) — Modern, beginner-friendly portfolio built with Next.js, React, and Tailwind CSS; fast, mobile-friendly, and SEO-ready.
+- **GameFolio Pro**: [GameFolio Pro](https://aureathemes.com/templates/gamefolio-pro/) — High-impact portfolio/resume for game creators; built with Next.js, React, and Tailwind CSS; responsive with strong SEO.
+- **DevFolio Premium**: [DevFolio Premium](https://aureathemes.com/templates/devfolio-premium/) — Professional React + TypeScript + Tailwind CSS portfolio for freshers to pros, with polished design and animations.
+- **Guide**: [Host your portfolio for free](https://aureathemes.com/blog/hosting-portfolio-website-free-platforms/) — Step-by-step deployment on GitHub Pages, Netlify, Vercel, and more.
+
 ## 🌟 Showcase
 
 Built your portfolio with GreenGlow? We'd love to see it! Share your live portfolio URL in the issues or discussions.
